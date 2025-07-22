@@ -31,7 +31,7 @@ let TENTHS_LESS_THAN_HUNDRED: string[] = [
  * @param {boolean} [asOrdinal] - Deprecated, use toWordsOrdinal() instead!
  * @returns {string}
  */
-function toWords(number: number | string, asOrdinal: boolean) {
+function toWords(number: number | string, asOrdinal?: boolean) {
     let words;
     let num = parseInt(String(number), 10);
 
@@ -110,4 +110,4 @@ function generateWords(number: number, words?: string[]) {
     return generateWords(remainder, words);
 }
 
-export {toWords};
+export default toWords;
