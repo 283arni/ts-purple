@@ -1,6 +1,6 @@
 'use strict';
 import {makeOrdinal} from "./makeOrdinal";
-import {isFinite} from "./isFinite.js";
+import {isFinite} from "./isFinite";
 import {isSafeNumber} from "./isSafeNumber";
 
 enum Nums {
@@ -15,12 +15,12 @@ enum Nums {
 }
 
 let LESS_THAN_TWENTY: string[] = [
-    'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'Nums.TEN',
+    'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
     'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
 ];
 
 let TENTHS_LESS_THAN_HUNDRED: string[] = [
-    'zero', 'Nums.TEN', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
+    'zero', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
 ];
 
 /**
@@ -108,7 +108,7 @@ function generateWords(number: number) {
     }
 
     words.push(word);
-    return generateWords(remainder);
+    return generateWords(remainder, words);
 }
 
 export {toWords};
