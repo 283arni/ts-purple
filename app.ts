@@ -49,10 +49,9 @@ function toWords(number: number | string, asOrdinal: boolean) {
     return asOrdinal ? makeOrdinal(words) : words;
 }
 
-function generateWords(number: number) {
+function generateWords(number: number, words?: string[]) {
     let remainder: number = 0;
     let word: string = '';
-    let words: string[] = arguments[1];
 
     // We’re done
     if (number === 0) {
