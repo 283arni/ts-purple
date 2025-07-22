@@ -40,8 +40,8 @@ function makeOrdinal(words: string): string {
     return words;
 }
 
-function replaceWithOrdinalVariant(match: string, numberWord: string): string {
-    return ordinalLessThanThirteen[numberWord];
+function replaceWithOrdinalVariant(match: string): string {
+    return ordinalLessThanThirteen[match];
 }
 
 export {makeOrdinal}
