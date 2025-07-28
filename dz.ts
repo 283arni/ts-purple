@@ -97,9 +97,9 @@ const isUsers = (res: any): res is Users => {
 
 const fetchData = async (): Promise<unknown> => {
     try {
-        const responce = await fetch('https://dummyjson.com/users').then(responce => responce.json()).then(res => console.log(res))
+        const responce = await fetch('https://dummyjson.com/users').then(responce => responce.json())
         if (isUsers(responce)) {
-            return responce
+            console.log(responce)
         } else {
             throw new Error('Не верные данные')
         }
