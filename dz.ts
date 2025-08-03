@@ -58,7 +58,7 @@ class MyMap {
     }
 
     has(key: string): boolean {
-        return this.get(key) ! === undefined;
+        return this.get(key) !== undefined;
     }
 
     delete(key: string): boolean {
@@ -79,6 +79,10 @@ class MyMap {
             entry = entry.next;
         }
         return false;
+    }
+
+    clear() {
+        this.buckets = []
     }
 }
 
